@@ -320,6 +320,67 @@
         <article>
             <div class="kratos-hentry kratos-post-inner clearfix index-post">
                 <div class="kratos-entry-thumb-new">
+                    <a href="/2021/05/22/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%20-%20Introducation/">
+                        
+                    </a>
+                </div>
+                <header class="kratos-entry-header">
+                    <h1 class="text-center"><a class="kratos-entry-title" href="/2021/05/22/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%20-%20Introducation/">作業系統 - Introducation</a></h1>
+                    
+                    <ul class="kratos-post-meta text-center">
+                        <li>
+                            <i class="fa fa-calendar"></i>
+                            2021-05-22
+                        </li>
+                        
+                        
+                            <li>
+                                <i class="fa fa-tags"></i>
+                                <a class="tag-none-link" href="/tags/Operating-System/" rel="tag">Operating System</a>
+                            </li>
+                        
+                        
+                            <!-- 当前仅支持valine/waline自带的统计功能 -->
+                            
+                        
+                        
+                            <!-- 当前仅支持waline自带的统计功能 -->
+                            
+                        
+                    </ul>
+                </header>
+                <hr />
+                <div class="kratos-post-content">
+                    <p>作業系統：是介於使用者與硬體之間，用來控制硬體的軟體。</p>
+<h2 id="作業系統的組成"><a href="#作業系統的組成" class="headerlink" title="作業系統的組成"></a>作業系統的組成</h2><p>作業系統是一個持續運作在電腦上的軟體程式。</p>
+<p><img src="https://i.imgur.com/am305FL.png"></p>
+<p>其中 kernel 是 OS 的重要核心之一，它充當著 Process 和 hardware 之間的溝通橋樑。當電腦開機時，最先載入的就是 <code>kernel</code>。</p>
+<p>除了 Kernel 以外還有另外兩種程式分別是：</p>
+<ul>
+<li>System Programe：與 OS 相關，但不一定與 Kernel 相關</li>
+<li>Application Programe：與操作系統底層無關的所有程式</li>
+</ul>
+<h2 id="Middlware"><a href="#Middlware" class="headerlink" title="Middlware"></a>Middlware</h2><p>是一組提供應用程式開發者額外服務的軟體框架。</p>
+<h2 id="Interrupts"><a href="#Interrupts" class="headerlink" title="Interrupts"></a>Interrupts</h2><p>當 CPU 被中斷時，會將正在執行的程式 <code>transfer</code> 到一個特定的位址，當中斷程式執行完成後，會將原本的程式還原並繼續執行。傳統的 OS 通常會把程式存在固定的位址中，而最近的 OS 則是直接存在 <code>system stack</code> 中。如果 <code>interrupt routine</code> 需要修改暫存器的值的話，則必須先把原本的程式還原，然後再中斷一次。</p>
+<p><img src="https://i.imgur.com/LbbbzMG.png"></p>
+<p>而負責執行 <code>interrupt</code> 這個動作的程式一般被稱為「<code>interrupt-specific handler</code>」。<br>一般為了能夠快速執行 <code>interrupt</code>，會直接將所有的 <code>interrupt routine</code> 存在一張 <code>table</code> 中。而這張 <code>table</code> 中的位址，皆對應著唯一的 <code>interrupt routine</code>。</p>
+<h2 id="Storage-Structure"><a href="#Storage-Structure" class="headerlink" title="Storage Structure"></a>Storage Structure</h2><p>在電腦中最基本的單位被稱為 <code>bit</code>。<code>Byte</code> 則是以 8 bit 為一個單位所儲存，通常被用來當做電腦存儲的基本單位。一般的電腦都是一個 <code>byte</code> 在移動資料，而非一個 <code>bit</code>。至於 <code>network</code> 則是一個 <code>bit</code> 在移動，因此在一般換算上才會除 8。</p>
+
+                </div>
+                <footer class="kratos-entry-footer clearfix">
+                    <div class="post-like-donate text-center clearfix">
+                        <a class="read-more" href="/2021/05/22/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%20-%20Introducation/#more" title="作業系統 - Introducation">繼續閱讀 <i class="fa fa-chevron-circle-right"></i></a>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    
+
+    
+    
+        <article>
+            <div class="kratos-hentry kratos-post-inner clearfix index-post">
+                <div class="kratos-entry-thumb-new">
                     <a href="/2021/05/22/%E5%8F%AF%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%B8%8D%E8%A6%81%E5%AF%AB%E7%B3%99%20code%20%E7%B3%BB%E5%88%97%20%E7%AC%AC%208%20%E7%AF%87%20-%20%E4%B8%8D%E5%BF%85%E8%A6%81%E7%9A%84%E8%A8%BB%E8%A7%A3/">
                         
                     </a>
@@ -394,67 +455,6 @@
                 <footer class="kratos-entry-footer clearfix">
                     <div class="post-like-donate text-center clearfix">
                         <a class="read-more" href="/2021/05/22/%E5%8F%AF%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%B8%8D%E8%A6%81%E5%AF%AB%E7%B3%99%20code%20%E7%B3%BB%E5%88%97%20%E7%AC%AC%208%20%E7%AF%87%20-%20%E4%B8%8D%E5%BF%85%E8%A6%81%E7%9A%84%E8%A8%BB%E8%A7%A3/#more" title="可不可以不要寫糙 code 系列 第 8 篇 - 不必要的註解">繼續閱讀 <i class="fa fa-chevron-circle-right"></i></a>
-                    </div>
-                </footer>
-            </div>
-        </article>
-    
-
-    
-    
-        <article>
-            <div class="kratos-hentry kratos-post-inner clearfix index-post">
-                <div class="kratos-entry-thumb-new">
-                    <a href="/2021/05/22/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%20-%20Introducation/">
-                        
-                    </a>
-                </div>
-                <header class="kratos-entry-header">
-                    <h1 class="text-center"><a class="kratos-entry-title" href="/2021/05/22/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%20-%20Introducation/">作業系統 - Introducation</a></h1>
-                    
-                    <ul class="kratos-post-meta text-center">
-                        <li>
-                            <i class="fa fa-calendar"></i>
-                            2021-05-22
-                        </li>
-                        
-                        
-                            <li>
-                                <i class="fa fa-tags"></i>
-                                <a class="tag-none-link" href="/tags/Operating-System/" rel="tag">Operating System</a>
-                            </li>
-                        
-                        
-                            <!-- 当前仅支持valine/waline自带的统计功能 -->
-                            
-                        
-                        
-                            <!-- 当前仅支持waline自带的统计功能 -->
-                            
-                        
-                    </ul>
-                </header>
-                <hr />
-                <div class="kratos-post-content">
-                    <p>作業系統：是介於使用者與硬體之間，用來控制硬體的軟體。</p>
-<h2 id="作業系統的組成"><a href="#作業系統的組成" class="headerlink" title="作業系統的組成"></a>作業系統的組成</h2><p>作業系統是一個持續運作在電腦上的軟體程式。</p>
-<p><img src="https://i.imgur.com/am305FL.png"></p>
-<p>其中 kernel 是 OS 的重要核心之一，它充當著 Process 和 hardware 之間的溝通橋樑。當電腦開機時，最先載入的就是 <code>kernel</code>。</p>
-<p>除了 Kernel 以外還有另外兩種程式分別是：</p>
-<ul>
-<li>System Programe：與 OS 相關，但不一定與 Kernel 相關</li>
-<li>Application Programe：與操作系統底層無關的所有程式</li>
-</ul>
-<h2 id="Middlware"><a href="#Middlware" class="headerlink" title="Middlware"></a>Middlware</h2><p>是一組提供應用程式開發者額外服務的軟體框架。</p>
-<h2 id="Interrupts"><a href="#Interrupts" class="headerlink" title="Interrupts"></a>Interrupts</h2><p>當 CPU 被中斷時，會將正在執行的程式 <code>transfer</code> 到一個特定的位址，當中斷程式執行完成後，會將原本的程式還原並繼續執行。傳統的 OS 通常會把程式存在固定的位址中，而最近的 OS 則是直接存在 <code>system stack</code> 中。如果 <code>interrupt routine</code> 需要修改暫存器的值的話，則必須先把原本的程式還原，然後再中斷一次。</p>
-<p><img src="https://i.imgur.com/LbbbzMG.png"></p>
-<p>而負責執行 <code>interrupt</code> 這個動作的程式一般被稱為「<code>interrupt-specific handler</code>」。<br>一般為了能夠快速執行 <code>interrupt</code>，會直接將所有的 <code>interrupt routine</code> 存在一張 <code>table</code> 中。而這張 <code>table</code> 中的位址，皆對應著唯一的 <code>interrupt routine</code>。</p>
-<h2 id="Storage-Structure"><a href="#Storage-Structure" class="headerlink" title="Storage Structure"></a>Storage Structure</h2><p>在電腦中最基本的單位被稱為 <code>bit</code>。<code>Byte</code> 則是以 8 bit 為一個單位所儲存，通常被用來當做電腦存儲的基本單位。一般的電腦都是一個 <code>byte</code> 在移動資料，而非一個 <code>bit</code>。至於 <code>network</code> 則是一個 <code>bit</code> 在移動，因此在一般換算上才會除 8。</p>
-
-                </div>
-                <footer class="kratos-entry-footer clearfix">
-                    <div class="post-like-donate text-center clearfix">
-                        <a class="read-more" href="/2021/05/22/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%20-%20Introducation/#more" title="作業系統 - Introducation">繼續閱讀 <i class="fa fa-chevron-circle-right"></i></a>
                     </div>
                 </footer>
             </div>
@@ -719,6 +719,78 @@
         <article>
             <div class="kratos-hentry kratos-post-inner clearfix index-post">
                 <div class="kratos-entry-thumb-new">
+                    <a href="/2021/05/22/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%88Regular%20Expression,%20Regex%EF%BC%89-%20%E5%88%86%E7%B5%84%E6%8D%95%E6%8D%89/">
+                        
+                    </a>
+                </div>
+                <header class="kratos-entry-header">
+                    <h1 class="text-center"><a class="kratos-entry-title" href="/2021/05/22/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%88Regular%20Expression,%20Regex%EF%BC%89-%20%E5%88%86%E7%B5%84%E6%8D%95%E6%8D%89/">正規表示法（Regular Expression, Regex）- 分組捕捉</a></h1>
+                    
+                    <ul class="kratos-post-meta text-center">
+                        <li>
+                            <i class="fa fa-calendar"></i>
+                            2021-05-22
+                        </li>
+                        
+                        
+                            <li>
+                                <i class="fa fa-tags"></i>
+                                <a class="tag-none-link" href="/tags/Regex/" rel="tag">Regex</a>
+                            </li>
+                        
+                        
+                            <!-- 当前仅支持valine/waline自带的统计功能 -->
+                            
+                        
+                        
+                            <!-- 当前仅支持waline自带的统计功能 -->
+                            
+                        
+                    </ul>
+                </header>
+                <hr />
+                <div class="kratos-post-content">
+                    <p>可以使用 () 來將規則表示式分組，除了作為子規則表示式之外，還可以搭配量詞使用。</p>
+<p>例如想要驗證電子郵件格式，允許的使用者名稱開頭要是大小寫英文字元，之後可搭配數字，規則表示式可以寫為 ^[a-zA-Z]+\d<em>，因為 @ 後網域名稱可以有數層，必須是大小寫英文字元或數字，規則表示式可以寫為 ([a-zA-Z0-9]+.)+，其中使用 () 群組了規則表示式，之後的 + 表示這個群組的表示式符合一次或多次，最後要是 com 結尾，整個結合起來的規則表示式就是 ^[a-zA-Z]+\d</em>@([a-zA-Z0-9]+\.)+com。</p>
+<p>若有字串符合了被分組的規則表示式，字串會被捕捉（Capture），以便在稍後回頭參考（Back reference），在這之前，必須知道分組計數，如果有個規則表示式 ((A)(B(C)))，其中有四個分組，這是遇到的左括號來計數，所以四個分組分別是：</p>
+<ol>
+<li>((A)(B(C)))</li>
+<li>(A)</li>
+<li>(B(C))</li>
+<li>(C)<br>分組回頭參考時，是在 \ 後加上分組計數，表示參考第幾個分組的比對結果。</li>
+</ol>
+<p>例如，\d\d 要求比對兩個數字，(\d\d)\1 的話，表示要輸入四個數字，輸入的前兩個數字與後兩個數字必須相同，例如輸入 1212 會符合，12 因為符合 (\d\d) 而被捕捉至分組 1，\1要求接下來輸入也要是分組 1 的內容，也就是 12；若輸入 1234 則不符合，因為 12 雖然符合 (\d\d) 而被捕捉，然而 \1 要求接下來的輸入也要是 12，然而接下來的數字是 34，因而不符合。</p>
+<hr>
+<p>再來看個實用的例子，[“‘][^”‘]*[“‘] 比對單引號或雙引號中 0 或多個字元，但沒有比對兩個都要是單引號或雙引號，([“‘])[^”‘]*\1 則比對出前後引號必須一致。</p>
+<p>規則表示式中的 (?…) 代表擴充標記（Extension notation），括號中首個字元必須是?，而這之後的字元（也就是…的部份），進一步決定了規則表示式的組成意義。</p>
+<p>如果不需要分組計數，只是想使用 () 來定義某個子規則，可以使用 (?:…) 來表示不捕捉分組。</p>
+<p>例如，若只是想比對郵件位址格式，不打算捕捉分組，可以使用 ^[a-zA-Z]+\d*@(?:[a-zA-Z0-9]+.)+com。<br>在規則表示式複雜之時，善用 (?:…) 來避免不必要的捕捉分組，對於效能也會有很大的改進。</p>
+<hr>
+<p>如果想比對出的對象，之後必須跟隨或沒有跟隨著特定文字，可以使用 (?=…) 或 (?!…)，分別稱為 lookahead 與 negative lookahead。例如分別比對出來的名稱最後必須有 Lin：</p>
+<p><img src="https://i.imgur.com/hAqyZHR.jpg"></p>
+<p>分組捕捉<br>如果將上圖中的 (?=Lin) 改為 (?!Lin)，就會比對出 Monica。</p>
+<hr>
+<p>相對地，如果想比對出的對象，前面必須有或沒有著特定文字，可以使用 (?&lt;=…) 或 (?&lt;!…)，分別稱為 lookbehind 與 negative lookbehind。</p>
+<p><img src="https://i.imgur.com/dINhBFG.jpg"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://openhome.cc/Gossip/Regex/Group.html">Openhome - 分組捕捉</a></li>
+</ol>
+
+                </div>
+                <footer class="kratos-entry-footer clearfix">
+                    <div class="post-like-donate text-center clearfix">
+                        <a class="read-more" href="/2021/05/22/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%88Regular%20Expression,%20Regex%EF%BC%89-%20%E5%88%86%E7%B5%84%E6%8D%95%E6%8D%89/#more" title="正規表示法（Regular Expression, Regex）- 分組捕捉">繼續閱讀 <i class="fa fa-chevron-circle-right"></i></a>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    
+
+    
+    
+        <article>
+            <div class="kratos-hentry kratos-post-inner clearfix index-post">
+                <div class="kratos-entry-thumb-new">
                     <a href="/2021/05/22/%E6%9E%B6%E6%A7%8B%E5%B8%AB/">
                         
                     </a>
@@ -919,78 +991,6 @@
                 <footer class="kratos-entry-footer clearfix">
                     <div class="post-like-donate text-center clearfix">
                         <a class="read-more" href="/2021/05/22/%E6%9E%B6%E6%A7%8B%E5%B8%AB/#more" title="架構">繼續閱讀 <i class="fa fa-chevron-circle-right"></i></a>
-                    </div>
-                </footer>
-            </div>
-        </article>
-    
-
-    
-    
-        <article>
-            <div class="kratos-hentry kratos-post-inner clearfix index-post">
-                <div class="kratos-entry-thumb-new">
-                    <a href="/2021/05/22/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%88Regular%20Expression,%20Regex%EF%BC%89-%20%E5%88%86%E7%B5%84%E6%8D%95%E6%8D%89/">
-                        
-                    </a>
-                </div>
-                <header class="kratos-entry-header">
-                    <h1 class="text-center"><a class="kratos-entry-title" href="/2021/05/22/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%88Regular%20Expression,%20Regex%EF%BC%89-%20%E5%88%86%E7%B5%84%E6%8D%95%E6%8D%89/">正規表示法（Regular Expression, Regex）- 分組捕捉</a></h1>
-                    
-                    <ul class="kratos-post-meta text-center">
-                        <li>
-                            <i class="fa fa-calendar"></i>
-                            2021-05-22
-                        </li>
-                        
-                        
-                            <li>
-                                <i class="fa fa-tags"></i>
-                                <a class="tag-none-link" href="/tags/Regex/" rel="tag">Regex</a>
-                            </li>
-                        
-                        
-                            <!-- 当前仅支持valine/waline自带的统计功能 -->
-                            
-                        
-                        
-                            <!-- 当前仅支持waline自带的统计功能 -->
-                            
-                        
-                    </ul>
-                </header>
-                <hr />
-                <div class="kratos-post-content">
-                    <p>可以使用 () 來將規則表示式分組，除了作為子規則表示式之外，還可以搭配量詞使用。</p>
-<p>例如想要驗證電子郵件格式，允許的使用者名稱開頭要是大小寫英文字元，之後可搭配數字，規則表示式可以寫為 ^[a-zA-Z]+\d<em>，因為 @ 後網域名稱可以有數層，必須是大小寫英文字元或數字，規則表示式可以寫為 ([a-zA-Z0-9]+.)+，其中使用 () 群組了規則表示式，之後的 + 表示這個群組的表示式符合一次或多次，最後要是 com 結尾，整個結合起來的規則表示式就是 ^[a-zA-Z]+\d</em>@([a-zA-Z0-9]+\.)+com。</p>
-<p>若有字串符合了被分組的規則表示式，字串會被捕捉（Capture），以便在稍後回頭參考（Back reference），在這之前，必須知道分組計數，如果有個規則表示式 ((A)(B(C)))，其中有四個分組，這是遇到的左括號來計數，所以四個分組分別是：</p>
-<ol>
-<li>((A)(B(C)))</li>
-<li>(A)</li>
-<li>(B(C))</li>
-<li>(C)<br>分組回頭參考時，是在 \ 後加上分組計數，表示參考第幾個分組的比對結果。</li>
-</ol>
-<p>例如，\d\d 要求比對兩個數字，(\d\d)\1 的話，表示要輸入四個數字，輸入的前兩個數字與後兩個數字必須相同，例如輸入 1212 會符合，12 因為符合 (\d\d) 而被捕捉至分組 1，\1要求接下來輸入也要是分組 1 的內容，也就是 12；若輸入 1234 則不符合，因為 12 雖然符合 (\d\d) 而被捕捉，然而 \1 要求接下來的輸入也要是 12，然而接下來的數字是 34，因而不符合。</p>
-<hr>
-<p>再來看個實用的例子，[“‘][^”‘]*[“‘] 比對單引號或雙引號中 0 或多個字元，但沒有比對兩個都要是單引號或雙引號，([“‘])[^”‘]*\1 則比對出前後引號必須一致。</p>
-<p>規則表示式中的 (?…) 代表擴充標記（Extension notation），括號中首個字元必須是?，而這之後的字元（也就是…的部份），進一步決定了規則表示式的組成意義。</p>
-<p>如果不需要分組計數，只是想使用 () 來定義某個子規則，可以使用 (?:…) 來表示不捕捉分組。</p>
-<p>例如，若只是想比對郵件位址格式，不打算捕捉分組，可以使用 ^[a-zA-Z]+\d*@(?:[a-zA-Z0-9]+.)+com。<br>在規則表示式複雜之時，善用 (?:…) 來避免不必要的捕捉分組，對於效能也會有很大的改進。</p>
-<hr>
-<p>如果想比對出的對象，之後必須跟隨或沒有跟隨著特定文字，可以使用 (?=…) 或 (?!…)，分別稱為 lookahead 與 negative lookahead。例如分別比對出來的名稱最後必須有 Lin：</p>
-<p><img src="https://i.imgur.com/hAqyZHR.jpg"></p>
-<p>分組捕捉<br>如果將上圖中的 (?=Lin) 改為 (?!Lin)，就會比對出 Monica。</p>
-<hr>
-<p>相對地，如果想比對出的對象，前面必須有或沒有著特定文字，可以使用 (?&lt;=…) 或 (?&lt;!…)，分別稱為 lookbehind 與 negative lookbehind。</p>
-<p><img src="https://i.imgur.com/dINhBFG.jpg"></p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://openhome.cc/Gossip/Regex/Group.html">Openhome - 分組捕捉</a></li>
-</ol>
-
-                </div>
-                <footer class="kratos-entry-footer clearfix">
-                    <div class="post-like-donate text-center clearfix">
-                        <a class="read-more" href="/2021/05/22/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%88Regular%20Expression,%20Regex%EF%BC%89-%20%E5%88%86%E7%B5%84%E6%8D%95%E6%8D%89/#more" title="正規表示法（Regular Expression, Regex）- 分組捕捉">繼續閱讀 <i class="fa fa-chevron-circle-right"></i></a>
                     </div>
                 </footer>
             </div>
@@ -1231,13 +1231,13 @@
         
           
           
-            <a class="list-group-item" href="/2021/05/22/%E5%8F%AF%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%B8%8D%E8%A6%81%E5%AF%AB%E7%B3%99%20code%20%E7%B3%BB%E5%88%97%20%E7%AC%AC%208%20%E7%AF%87%20-%20%E4%B8%8D%E5%BF%85%E8%A6%81%E7%9A%84%E8%A8%BB%E8%A7%A3/"><i class="fa  fa-book"></i> 可不可以不要寫糙 code 系列 第 8 篇 - 不必要的註解</a>
+            <a class="list-group-item" href="/2021/05/22/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%20-%20Introducation/"><i class="fa  fa-book"></i> 作業系統 - Introducation</a>
             
           
         
           
           
-            <a class="list-group-item" href="/2021/05/22/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%20-%20Introducation/"><i class="fa  fa-book"></i> 作業系統 - Introducation</a>
+            <a class="list-group-item" href="/2021/05/22/%E5%8F%AF%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%B8%8D%E8%A6%81%E5%AF%AB%E7%B3%99%20code%20%E7%B3%BB%E5%88%97%20%E7%AC%AC%208%20%E7%AF%87%20-%20%E4%B8%8D%E5%BF%85%E8%A6%81%E7%9A%84%E8%A8%BB%E8%A7%A3/"><i class="fa  fa-book"></i> 可不可以不要寫糙 code 系列 第 8 篇 - 不必要的註解</a>
             
           
         
