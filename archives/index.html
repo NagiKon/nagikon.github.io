@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="/images/site_logo.webp">
+  <title>Treeboのブログ</title>
+  <meta name="author" content="Treebo" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="技術部落格" />
+  
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Treeboのブログ">
+<meta property="og:url" content="http://example.com/archives/index.html">
+<meta property="og:site_name" content="Treeboのブログ">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://example.com/images/site_logo.webp">
+<meta property="article:author" content="Treebo">
+<meta property="article:tag" content="技術部落格">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/site_logo.webp">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['G-34GCMGPCS5']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics -->
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+  
+  <style>
+    
+      .kratos-cover.kratos-cover-2 {
+        background-image: url('/images/banner.webp');
+      }
+    
+    
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('/images/bg.webp');
+        }
+      }
+    
+  </style>
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首頁</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>歸檔</a></li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">Treeboのブログ</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>Treeboのブログ</h2> <br />
+                        <span>學習與反思；交流與批判</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            
+<style>
+  .post-meta time{color:#00a7e0}
+  @media (max-width:767px){.posts-collapse{margin:0 20px}
+  .posts-collapse .post-meta,.posts-collapse .post-title{display:block;width:auto;text-align:left}}
+  .posts-collapse{position:relative}
+  .posts-collapse::after{content:" ";position:absolute;top:20px;left:0;margin-left:-2px;width:4px;height:calc(100% - 35px);background:#f5f5f5;z-index:-1}
+  @media (max-width:991px){.posts-collapse{margin:0 20px}}
+  .posts-collapse .collection-title{position:relative}
+  .posts-collapse .collection-title h1,.posts-collapse .collection-title h2{margin-left:20px}.posts-collapse .collection-title small{color:#bbb;margin-left:5px}
+  .posts-collapse .collection-title::before{content:" ";position:absolute;left:0;top:50%;margin-left:-4px;margin-top:-4px;width:8px;height:8px;background:#bbb;border-radius:50%}
+  .posts-collapse .post-header{position:relative;transition-duration:.2s;transition-timing-function:ease-in-out;transition-delay:0s;transition-property:border}
+  .posts-collapse .post-header::before{content:" ";position:absolute;left:0;top:12px;width:6px;height:6px;margin-left:-4px;background:#bbb;border-radius:50%;border:1px solid #fff}
+  .posts-collapse .post-header:hover{border-bottom-color:#666}.posts-collapse .post-header:hover::before{background:#222}
+  .posts-collapse .post-meta{position:absolute;font-size:12px;left:20px;top:5px}
+  .posts-collapse .post-comments-count{display:none}
+  .posts-collapse .post-title{margin-left:70px;font-size:16px;font-weight:400;line-height:inherit}
+  .posts-collapse .post-title::after{margin-left:3px;opacity:.6}.posts-collapse .post-title a{color:#666;border-bottom:none}
+  .kratos-post-content div.arc-tags{margin-bottom:30px}
+  .arc-tags a{-webkit-box-shadow:0 1px 4px rgba(0,0,0,.1);box-shadow:0 1px 4px rgba(0,0,0,.1);border:1px solid #fff;border-radius:15px;margin:4px 8px 0 0;font-weight:500;display:inline-block;padding:0 12px;background:rgba(255,255,255,.5);font-size:16px;}
+  .arc-tags a::before{content:"# ";color:#e8a6a6}
+</style>
+
+  <article>
+      <div class="kratos-hentry kratos-post-inner clearfix">
+          <div class="kratos-post-content">
+            <h2 class="title-h2 text-center">歸檔</h2>
+            <div id="archives">
+                
+                  <div class="arc-tags">
+                      <a class="tag-none-link" href="/tags/Coding-Tips/" rel="tag">Coding Tips</a> <a class="tag-none-link" href="/tags/OOP/" rel="tag">OOP</a> <a class="tag-none-link" href="/tags/Operating-System/" rel="tag">Operating System</a> <a class="tag-none-link" href="/tags/PHP/" rel="tag">PHP</a> <a class="tag-none-link" href="/tags/Regex/" rel="tag">Regex</a> <a class="tag-none-link" href="/tags/System-Design/" rel="tag">System Design</a> <a class="tag-none-link" href="/tags/coding-Tips/" rel="tag">coding Tips</a> <a class="tag-none-link" href="/tags/front-end/" rel="tag">front-end</a> <a class="tag-none-link" href="/tags/%E5%8F%AF%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%B8%8D%E8%A6%81%E5%AF%AB%E7%B3%99-code/" rel="tag">可不可以不要寫糙 code</a> <a class="tag-none-link" href="/tags/%E5%BD%93%E7%84%B6%E6%88%91%E5%9C%A8%E6%89%AF%E6%B7%A1/" rel="tag">当然我在扯淡</a> <a class="tag-none-link" href="/tags/%E5%BF%85%E5%8B%9D-IT-%E5%8D%81%E5%85%AB%E6%8B%9B/" rel="tag">必勝 IT 十八招</a> <a class="tag-none-link" href="/tags/%E8%AC%9B%E5%BA%A7%E5%8F%83%E8%88%87%E5%BF%83%E5%BE%97/" rel="tag">講座參與心得</a> <a class="tag-none-link" href="/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/" rel="tag">閱讀心得</a>
+                  </div>
+                
+                <div class="post-block archive post" style="margin-left: 2em;">
+                  <h3 class="archive-page-counter">當前共有 10 篇文章</h3>
+                  <div class="posts-collapse">
+                    
+                    
+                      
+                      
+                        <!-- 没遇到Title的会被自动忽略年份，即使并不一致 -->
+                        
+                        <div class="collection-title">
+                          <a href="/archives/2021/"><h2 class="archive-year">2021</h2></a>
+                        </div>
+                      
+                      
+                        <article class="post" itemscope>
+                          <header class="post-header">
+                            <h3 class="post-title">
+                              
+                                  <a class="post-title-link" href="/2021/09/03/hello-world/" itemprop="url">
+                                    <span itemprop="name">Hello World</span>
+                                  </a>
+                              
+                            </h3>
+                            <div class="post-meta">
+                              <time class="post-time" itemprop="dateCreated"
+                                    datetime="2021-09-03T16:58:08+08:00"
+                                    content="2021-09-03" >
+                                09-03
+                              </time>
+                            </div>
+                          </header>
+                        </article>
+                      
+                    
+                      
+                      
+                      
+                        <article class="post" itemscope>
+                          <header class="post-header">
+                            <h3 class="post-title">
+                              
+                                  <a class="post-title-link" href="/2021/05/22/%E4%BB%80%E9%BA%BC%E6%98%AF%E5%B0%8D%E4%BD%BF%E7%94%A8%E8%80%85%E5%8F%8B%E5%A5%BD/" itemprop="url">
+                                    <span itemprop="name">什麼是對使用者友好</span>
+                                  </a>
+                              
+                            </h3>
+                            <div class="post-meta">
+                              <time class="post-time" itemprop="dateCreated"
+                                    datetime="2021-05-22T20:32:33+08:00"
+                                    content="2021-05-22" >
+                                05-22
+                              </time>
+                            </div>
+                          </header>
+                        </article>
+                      
+                    
+                      
+                      
+                      
+                        <article class="post" itemscope>
+                          <header class="post-header">
+                            <h3 class="post-title">
+                              
+                                  <a class="post-title-link" href="/2021/05/22/%E5%8F%AF%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%B8%8D%E8%A6%81%E5%AF%AB%E7%B3%99%20code%20%E7%B3%BB%E5%88%97%20%E7%AC%AC%208%20%E7%AF%87%20-%20%E4%B8%8D%E5%BF%85%E8%A6%81%E7%9A%84%E8%A8%BB%E8%A7%A3/" itemprop="url">
+                                    <span itemprop="name">可不可以不要寫糙 code 系列 第 8 篇 - 不必要的註解</span>
+                                  </a>
+                              
+                            </h3>
+                            <div class="post-meta">
+                              <time class="post-time" itemprop="dateCreated"
+                                    datetime="2021-05-22T20:32:33+08:00"
+                                    content="2021-05-22" >
+                                05-22
+                              </time>
+                            </div>
+                          </header>
+                        </article>
+                      
+                    
+                      
+                      
+                      
+                        <article class="post" itemscope>
+                          <header class="post-header">
+                            <h3 class="post-title">
+                              
+                                  <a class="post-title-link" href="/2021/05/22/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%20-%20Introducation/" itemprop="url">
+                                    <span itemprop="name">作業系統 - Introducation</span>
+                                  </a>
+                              
+                            </h3>
+                            <div class="post-meta">
+                              <time class="post-time" itemprop="dateCreated"
+                                    datetime="2021-05-22T20:32:33+08:00"
+                                    content="2021-05-22" >
+                                05-22
+                              </time>
+                            </div>
+                          </header>
+                        </article>
+                      
+                    
+                      
+                      
+                      
+                        <article class="post" itemscope>
+                          <header class="post-header">
+                            <h3 class="post-title">
+                              
+                                  <a class="post-title-link" href="/2021/05/22/%E5%8F%AF%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%B8%8D%E8%A6%81%E5%AF%AB%E7%B3%99%20code%E7%B3%BB%E5%88%97%20-%20%E5%A6%82%E4%BD%95%E5%AF%AB%E9%AB%98%E5%93%81%E8%B3%AA%20function/" itemprop="url">
+                                    <span itemprop="name">可不可以不要寫糙 code系列 - 如何寫高品質 function </span>
+                                  </a>
+                              
+                            </h3>
+                            <div class="post-meta">
+                              <time class="post-time" itemprop="dateCreated"
+                                    datetime="2021-05-22T20:32:33+08:00"
+                                    content="2021-05-22" >
+                                05-22
+                              </time>
+                            </div>
+                          </header>
+                        </article>
+                      
+                    
+                      
+                      
+                      
+                        <article class="post" itemscope>
+                          <header class="post-header">
+                            <h3 class="post-title">
+                              
+                                  <a class="post-title-link" href="/2021/05/22/%E5%BF%85%E5%8B%9D%20IT%20%E5%8D%81%E5%85%AB%E6%8B%9B/" itemprop="url">
+                                    <span itemprop="name">必勝 IT 十八招</span>
+                                  </a>
+                              
+                            </h3>
+                            <div class="post-meta">
+                              <time class="post-time" itemprop="dateCreated"
+                                    datetime="2021-05-22T20:32:33+08:00"
+                                    content="2021-05-22" >
+                                05-22
+                              </time>
+                            </div>
+                          </header>
+                        </article>
+                      
+                    
+                      
+                      
+                      
+                        <article class="post" itemscope>
+                          <header class="post-header">
+                            <h3 class="post-title">
+                              
+                                  <a class="post-title-link" href="/2021/05/22/%E6%8F%90%E5%8D%87%E5%89%8D%E7%AB%AF%20performance%20%E6%8A%80%E5%B7%A7/" itemprop="url">
+                                    <span itemprop="name">提升前端 performance 技巧</span>
+                                  </a>
+                              
+                            </h3>
+                            <div class="post-meta">
+                              <time class="post-time" itemprop="dateCreated"
+                                    datetime="2021-05-22T20:32:33+08:00"
+                                    content="2021-05-22" >
+                                05-22
+                              </time>
+                            </div>
+                          </header>
+                        </article>
+                      
+                    
+                      
+                      
+                      
+                        <article class="post" itemscope>
+                          <header class="post-header">
+                            <h3 class="post-title">
+                              
+                                  <a class="post-title-link" href="/2021/05/22/%E6%9E%B6%E6%A7%8B%E5%B8%AB/" itemprop="url">
+                                    <span itemprop="name">架構</span>
+                                  </a>
+                              
+                            </h3>
+                            <div class="post-meta">
+                              <time class="post-time" itemprop="dateCreated"
+                                    datetime="2021-05-22T20:32:33+08:00"
+                                    content="2021-05-22" >
+                                05-22
+                              </time>
+                            </div>
+                          </header>
+                        </article>
+                      
+                    
+                      
+                      
+                      
+                        <article class="post" itemscope>
+                          <header class="post-header">
+                            <h3 class="post-title">
+                              
+                                  <a class="post-title-link" href="/2021/05/22/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%88Regular%20Expression,%20Regex%EF%BC%89-%20%E5%88%86%E7%B5%84%E6%8D%95%E6%8D%89/" itemprop="url">
+                                    <span itemprop="name">正規表示法（Regular Expression, Regex）- 分組捕捉</span>
+                                  </a>
+                              
+                            </h3>
+                            <div class="post-meta">
+                              <time class="post-time" itemprop="dateCreated"
+                                    datetime="2021-05-22T20:32:33+08:00"
+                                    content="2021-05-22" >
+                                05-22
+                              </time>
+                            </div>
+                          </header>
+                        </article>
+                      
+                    
+                      
+                      
+                      
+                        <article class="post" itemscope>
+                          <header class="post-header">
+                            <h3 class="post-title">
+                              
+                                  <a class="post-title-link" href="/2021/05/22/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%88Regular%20Expression,%20Regex%EF%BC%89-%20%E5%AD%97%E5%85%83%E3%80%81%E5%AD%97%E5%85%83%E9%A1%9E/" itemprop="url">
+                                    <span itemprop="name">正規表示法（Regular Expression, Regex）- 字元、字元類</span>
+                                  </a>
+                              
+                            </h3>
+                            <div class="post-meta">
+                              <time class="post-time" itemprop="dateCreated"
+                                    datetime="2021-05-22T20:32:33+08:00"
+                                    content="2021-05-22" >
+                                05-22
+                              </time>
+                            </div>
+                          </header>
+                        </article>
+                      
+                    
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+        <div class='text-center pagination'>
+        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right"></i></a>
+        </div>
+      
+  </article>
+
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+        <div class="sticky-area">
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"></p>
+    </div>
+</aside>
+            
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分類目錄</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/123/">123</a><span class="category-list-count">1</span></li></ul></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>標籤</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Coding-Tips/" style="font-size: 0.7em;">Coding Tips</a> <a href="/tags/OOP/" style="font-size: 0.6em;">OOP</a> <a href="/tags/Operating-System/" style="font-size: 0.6em;">Operating System</a> <a href="/tags/PHP/" style="font-size: 0.6em;">PHP</a> <a href="/tags/Regex/" style="font-size: 0.7em;">Regex</a> <a href="/tags/System-Design/" style="font-size: 0.6em;">System Design</a> <a href="/tags/coding-Tips/" style="font-size: 0.6em;">coding Tips</a> <a href="/tags/front-end/" style="font-size: 0.65em;">front-end</a> <a href="/tags/%E5%8F%AF%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%B8%8D%E8%A6%81%E5%AF%AB%E7%B3%99-code/" style="font-size: 0.65em;">可不可以不要寫糙 code</a> <a href="/tags/%E5%BD%93%E7%84%B6%E6%88%91%E5%9C%A8%E6%89%AF%E6%B7%A1/" style="font-size: 0.75em;">当然我在扯淡</a> <a href="/tags/%E5%BF%85%E5%8B%9D-IT-%E5%8D%81%E5%85%AB%E6%8B%9B/" style="font-size: 0.6em;">必勝 IT 十八招</a> <a href="/tags/%E8%AC%9B%E5%BA%A7%E5%8F%83%E8%88%87%E5%BF%83%E5%BE%97/" style="font-size: 0.6em;">講座參與心得</a> <a href="/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/" style="font-size: 0.8em;">閱讀心得</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2021/09/03/hello-world/"><i class="fa  fa-book"></i> Hello World</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/05/22/%E4%BB%80%E9%BA%BC%E6%98%AF%E5%B0%8D%E4%BD%BF%E7%94%A8%E8%80%85%E5%8F%8B%E5%A5%BD/"><i class="fa  fa-book"></i> 什麼是對使用者友好</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/05/22/%E5%8F%AF%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%B8%8D%E8%A6%81%E5%AF%AB%E7%B3%99%20code%20%E7%B3%BB%E5%88%97%20%E7%AC%AC%208%20%E7%AF%87%20-%20%E4%B8%8D%E5%BF%85%E8%A6%81%E7%9A%84%E8%A8%BB%E8%A7%A3/"><i class="fa  fa-book"></i> 可不可以不要寫糙 code 系列 第 8 篇 - 不必要的註解</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/05/22/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%20-%20Introducation/"><i class="fa  fa-book"></i> 作業系統 - Introducation</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/05/22/%E5%8F%AF%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%B8%8D%E8%A6%81%E5%AF%AB%E7%B3%99%20code%E7%B3%BB%E5%88%97%20-%20%E5%A6%82%E4%BD%95%E5%AF%AB%E9%AB%98%E5%93%81%E8%B3%AA%20function/"><i class="fa  fa-book"></i> 可不可以不要寫糙 code系列 - 如何寫高品質 function </a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  >
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        <li><a href="mailto:nagicheng@gmail.com"><i class="fa fa-envelope"></i></a></li>
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://www.facebook.com/https://www.facebook.com/profile.php?id=100004983279906"><i class="fa fa-facebook-official"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://cn.linkedin.com/in/https://www.linkedin.com/in/nagikon/"><i class="fa fa-linkedin-square"></i></a></li>
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/https://github.com/NagiKon"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2021 Treeboのブログ 版權所有.</li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by Treebo.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>

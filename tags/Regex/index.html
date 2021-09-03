@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="/images/site_logo.webp">
+  <title>Treeboのブログ</title>
+  <meta name="author" content="Treebo" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="技術部落格" />
+  
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Treeboのブログ">
+<meta property="og:url" content="http://example.com/tags/Regex/index.html">
+<meta property="og:site_name" content="Treeboのブログ">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://example.com/images/site_logo.webp">
+<meta property="article:author" content="Treebo">
+<meta property="article:tag" content="技術部落格">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/site_logo.webp">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['G-34GCMGPCS5']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics -->
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+  
+  <style>
+    
+      .kratos-cover.kratos-cover-2 {
+        background-image: url('/images/banner.webp');
+      }
+    
+    
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('/images/bg.webp');
+        }
+      }
+    
+  </style>
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首頁</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>歸檔</a></li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">Treeboのブログ</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>Treeboのブログ</h2> <br />
+                        <span>學習與反思；交流與批判</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            
+    
+    
+        <article>
+            <div class="kratos-hentry kratos-post-inner clearfix index-post">
+                <div class="kratos-entry-thumb-new">
+                    <a href="/2021/05/22/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%88Regular%20Expression,%20Regex%EF%BC%89-%20%E5%88%86%E7%B5%84%E6%8D%95%E6%8D%89/">
+                        
+                    </a>
+                </div>
+                <header class="kratos-entry-header">
+                    <h1 class="text-center"><a class="kratos-entry-title" href="/2021/05/22/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%88Regular%20Expression,%20Regex%EF%BC%89-%20%E5%88%86%E7%B5%84%E6%8D%95%E6%8D%89/">正規表示法（Regular Expression, Regex）- 分組捕捉</a></h1>
+                    
+                    <ul class="kratos-post-meta text-center">
+                        <li>
+                            <i class="fa fa-calendar"></i>
+                            2021-05-22
+                        </li>
+                        
+                        
+                            <li>
+                                <i class="fa fa-tags"></i>
+                                <a class="tag-none-link" href="/tags/Regex/" rel="tag">Regex</a>
+                            </li>
+                        
+                        
+                            <!-- 当前仅支持valine/waline自带的统计功能 -->
+                            
+                        
+                        
+                            <!-- 当前仅支持waline自带的统计功能 -->
+                            
+                        
+                    </ul>
+                </header>
+                <hr />
+                <div class="kratos-post-content">
+                    <p>可以使用 () 來將規則表示式分組，除了作為子規則表示式之外，還可以搭配量詞使用。</p>
+<p>例如想要驗證電子郵件格式，允許的使用者名稱開頭要是大小寫英文字元，之後可搭配數字，規則表示式可以寫為 ^[a-zA-Z]+\d<em>，因為 @ 後網域名稱可以有數層，必須是大小寫英文字元或數字，規則表示式可以寫為 ([a-zA-Z0-9]+.)+，其中使用 () 群組了規則表示式，之後的 + 表示這個群組的表示式符合一次或多次，最後要是 com 結尾，整個結合起來的規則表示式就是 ^[a-zA-Z]+\d</em>@([a-zA-Z0-9]+\.)+com。</p>
+<p>若有字串符合了被分組的規則表示式，字串會被捕捉（Capture），以便在稍後回頭參考（Back reference），在這之前，必須知道分組計數，如果有個規則表示式 ((A)(B(C)))，其中有四個分組，這是遇到的左括號來計數，所以四個分組分別是：</p>
+<ol>
+<li>((A)(B(C)))</li>
+<li>(A)</li>
+<li>(B(C))</li>
+<li>(C)<br>分組回頭參考時，是在 \ 後加上分組計數，表示參考第幾個分組的比對結果。</li>
+</ol>
+<p>例如，\d\d 要求比對兩個數字，(\d\d)\1 的話，表示要輸入四個數字，輸入的前兩個數字與後兩個數字必須相同，例如輸入 1212 會符合，12 因為符合 (\d\d) 而被捕捉至分組 1，\1要求接下來輸入也要是分組 1 的內容，也就是 12；若輸入 1234 則不符合，因為 12 雖然符合 (\d\d) 而被捕捉，然而 \1 要求接下來的輸入也要是 12，然而接下來的數字是 34，因而不符合。</p>
+<hr>
+<p>再來看個實用的例子，[“‘][^”‘]*[“‘] 比對單引號或雙引號中 0 或多個字元，但沒有比對兩個都要是單引號或雙引號，([“‘])[^”‘]*\1 則比對出前後引號必須一致。</p>
+<p>規則表示式中的 (?…) 代表擴充標記（Extension notation），括號中首個字元必須是?，而這之後的字元（也就是…的部份），進一步決定了規則表示式的組成意義。</p>
+<p>如果不需要分組計數，只是想使用 () 來定義某個子規則，可以使用 (?:…) 來表示不捕捉分組。</p>
+<p>例如，若只是想比對郵件位址格式，不打算捕捉分組，可以使用 ^[a-zA-Z]+\d*@(?:[a-zA-Z0-9]+.)+com。<br>在規則表示式複雜之時，善用 (?:…) 來避免不必要的捕捉分組，對於效能也會有很大的改進。</p>
+<hr>
+<p>如果想比對出的對象，之後必須跟隨或沒有跟隨著特定文字，可以使用 (?=…) 或 (?!…)，分別稱為 lookahead 與 negative lookahead。例如分別比對出來的名稱最後必須有 Lin：</p>
+<p><img src="https://i.imgur.com/hAqyZHR.jpg"></p>
+<p>分組捕捉<br>如果將上圖中的 (?=Lin) 改為 (?!Lin)，就會比對出 Monica。</p>
+<hr>
+<p>相對地，如果想比對出的對象，前面必須有或沒有著特定文字，可以使用 (?&lt;=…) 或 (?&lt;!…)，分別稱為 lookbehind 與 negative lookbehind。</p>
+<p><img src="https://i.imgur.com/dINhBFG.jpg"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://openhome.cc/Gossip/Regex/Group.html">Openhome - 分組捕捉</a></li>
+</ol>
+
+                </div>
+                <footer class="kratos-entry-footer clearfix">
+                    <div class="post-like-donate text-center clearfix">
+                        <a class="read-more" href="/2021/05/22/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%88Regular%20Expression,%20Regex%EF%BC%89-%20%E5%88%86%E7%B5%84%E6%8D%95%E6%8D%89/#more" title="正規表示法（Regular Expression, Regex）- 分組捕捉">繼續閱讀 <i class="fa fa-chevron-circle-right"></i></a>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    
+
+    
+    
+        <article>
+            <div class="kratos-hentry kratos-post-inner clearfix index-post">
+                <div class="kratos-entry-thumb-new">
+                    <a href="/2021/05/22/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%88Regular%20Expression,%20Regex%EF%BC%89-%20%E5%AD%97%E5%85%83%E3%80%81%E5%AD%97%E5%85%83%E9%A1%9E/">
+                        
+                    </a>
+                </div>
+                <header class="kratos-entry-header">
+                    <h1 class="text-center"><a class="kratos-entry-title" href="/2021/05/22/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%88Regular%20Expression,%20Regex%EF%BC%89-%20%E5%AD%97%E5%85%83%E3%80%81%E5%AD%97%E5%85%83%E9%A1%9E/">正規表示法（Regular Expression, Regex）- 字元、字元類</a></h1>
+                    
+                    <ul class="kratos-post-meta text-center">
+                        <li>
+                            <i class="fa fa-calendar"></i>
+                            2021-05-22
+                        </li>
+                        
+                        
+                            <li>
+                                <i class="fa fa-tags"></i>
+                                <a class="tag-none-link" href="/tags/Regex/" rel="tag">Regex</a>
+                            </li>
+                        
+                        
+                            <!-- 当前仅支持valine/waline自带的统计功能 -->
+                            
+                        
+                        
+                            <!-- 当前仅支持waline自带的统计功能 -->
+                            
+                        
+                    </ul>
+                </header>
+                <hr />
+                <div class="kratos-post-content">
+                    <p>規則表示式中的兩類基本字元符號為「字面字元（Literals）」與「詮譯字元（Metacharacters）」。</p>
+<p>字面字元是指按照字面意義比對的字元，例如指定 Orz 時，指的是三個字元 O、r、z 連續出現的規則；詮譯字元是不按照字面比對，在不同情境有不同意義的字元。</p>
+<p>例如 ^ 是詮譯字元，規則表示式 ^Orz 是指行首後接續出現 Orz 的規則，也就是此時 ^ 表示一行的開頭，而不是比對 ^ 這個字元；但是規則表示式 [^Orz] 用來表示指不包括 O 或 r 或 z，也就是在 [] 中時，^ 表示非之後幾個字元之一的情況。</p>
+<table>
+<thead>
+<tr>
+<th>字面字元</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Orz</td>
+<td>三個字元 O、r、z 連續出現的字串才符合條件</td>
+</tr>
+<tr>
+<td><strong>詮譯字元</strong></td>
+<td><strong>效果</strong></td>
+</tr>
+<tr>
+<td>[^Orz]</td>
+<td>用來表示指不包括 O 或 r 或 z，也就是在 [] 中時，<br>^ 表示非之後幾個字元之一的情況</td>
+</tr>
+</tbody></table>
+<p>詮譯字元在規則表示式中有特殊意義，例如： <code>$ ^ * ( ) + = &#123; &#125; [ ] | \ : . ?</code> 等，若要比對這些字元，則必須加上轉義（Escape）符號，例如要比對 $ 字元，必須使用 \$。如果不確定哪些標點符號字元要加上轉義符號，可以在每個標點符號前加上\，例如比對逗號也可以寫 \,。</p>
+<p>如果規則表示式為 XY，那麼表示比對「X 之後要跟隨著 Y」，如果想表示「X 或 Y」，可以使用 <code>X|Y</code>，如果有多個字元要以「或」的方式表示，例如「X 或 Y 或 Z」，可以使用字元類（Character class）表示為 [XYZ]。</p>
+<hr>
+<p>規則表示式中，多個字元可以歸類在一起，成為一個<font color="FF0000">字元類</font>，字元類會比對文字中是否有「任一個」字元符合字元類中某個字元。規則表示式中被放在<code>[]</code>中的字元就成為一個字元類。例如，若字串為 Justin1Monica2Irene3Bush，你想要找到 1 或 2 或 3 來切割字串，規則表示式可撰寫為 [123]。</p>
+<p>規則表示式 123 連續出現字元 1、2、3，然而 [] 中的字元是「或」的概念，也就是 [123] 表示「1 或 2 或 3」，| 在字元類別只是個普通字元，不會被當作「或」來表示。</p>
+<p>字元類中可以使用連字號<code>-</code>作為字元類詮譯字元，表示一段文字範圍，例如要比對文字中是否有 1 到 5 任一數字出現，規則表示式為 [1-5]，要比對文字中是否有 a 到 z 任一字母出現，規則表示式為 [a-z]，要比對文字中是否有 1 到 5、a 到 z、M 到 W 任一字元出現，規則表示式可以寫為 [1-5a-zM-W]。</p>
+<p>字元類中可以使用 ^ 作為字元類詮譯字元，[^] 則為反字元類（Negated character class），例如 [^abc] 會比對 a、b、c 以外的字元。</p>
+<p>以下為字元類的幾個表示範例：</p>
+<table>
+<thead>
+<tr>
+<th>Regex</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[abc]</td>
+<td>a 或 b 或 c 任一字元</td>
+</tr>
+<tr>
+<td>[^abc]</td>
+<td>a、b、c 以外的任一字元</td>
+</tr>
+<tr>
+<td>[a-zA-Z]</td>
+<td>a 到 z 或 A 到 Z 任一字元</td>
+</tr>
+<tr>
+<td>[a-d[m-p]]</td>
+<td>a 到 d 或 m 到 p 任一字元（聯集），等於 [a-dm-p]</td>
+</tr>
+<tr>
+<td>[a-z&amp;&amp;[def]]</td>
+<td>a 到 z 且是 d、e、f 的任一字元（交集），等於 [def]</td>
+</tr>
+<tr>
+<td>[a-z&amp;&amp;[^bc]]</td>
+<td>a 到 z 且不是 b 或 c 的任一字元（減集），等於 [ad-z]</td>
+</tr>
+<tr>
+<td>[a-z&amp;&amp;[^m-p]]</td>
+<td>a 到 z 且不是 m 到 p 的任一字元，等於 [a-lq-z]</td>
+</tr>
+</tbody></table>
+<p>有些字元類很常用，例如經常會比對是否為 0 到 9 的數字，可以撰寫為 [0-9]，或是撰寫為 \d，這類字元被稱為字元類縮寫或預定義字元類（Predefined character class），它們不用被包括在 [] 之中，底下列出可用的預定義字元類：</p>
+<table>
+<thead>
+<tr>
+<th>Regex</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>.</code></td>
+<td>任一字元（不包括換行、多位元組字元）</td>
+</tr>
+<tr>
+<td><code>\d</code></td>
+<td>比對任一數字字元，即 [0-9]</td>
+</tr>
+<tr>
+<td><code>\D</code></td>
+<td>比對任一非數字字元，即 [^0-9]</td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>比對任一空白字元，即 [\t\n\x0B\f\r]</td>
+</tr>
+<tr>
+<td><code>\S</code></td>
+<td>比對任一非空白字元，即 [^\s]</td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>比對任一 ASCII 字元，即 [a-zA-Z0-9_]</td>
+</tr>
+<tr>
+<td><code>\W</code></td>
+<td>比對任一非 ASCII 字元，即 [^\w]</td>
+</tr>
+</tbody></table>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://openhome.cc/Gossip/Regex/Character.html">Openhome - 字元、字元類</a></li>
+</ol>
+
+                </div>
+                <footer class="kratos-entry-footer clearfix">
+                    <div class="post-like-donate text-center clearfix">
+                        <a class="read-more" href="/2021/05/22/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%88Regular%20Expression,%20Regex%EF%BC%89-%20%E5%AD%97%E5%85%83%E3%80%81%E5%AD%97%E5%85%83%E9%A1%9E/#more" title="正規表示法（Regular Expression, Regex）- 字元、字元類">繼續閱讀 <i class="fa fa-chevron-circle-right"></i></a>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    
+
+    
+    
+        <article>
+            <div class="kratos-hentry kratos-post-inner clearfix index-post">
+                <div class="kratos-entry-thumb-new">
+                    <a href="/2021/05/22/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%88Regular%20Expression,%20Regex%EF%BC%89-%20%E7%B8%BD%E8%A1%A8/">
+                        
+                    </a>
+                </div>
+                <header class="kratos-entry-header">
+                    <h1 class="text-center"><a class="kratos-entry-title" href="/2021/05/22/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%88Regular%20Expression,%20Regex%EF%BC%89-%20%E7%B8%BD%E8%A1%A8/">正規表示法（Regular Expression, Regex）- 總表</a></h1>
+                    
+                    <ul class="kratos-post-meta text-center">
+                        <li>
+                            <i class="fa fa-calendar"></i>
+                            2021-05-22
+                        </li>
+                        
+                        
+                            <li>
+                                <i class="fa fa-tags"></i>
+                                <a class="tag-none-link" href="/tags/Regex/" rel="tag">Regex</a>
+                            </li>
+                        
+                        
+                            <!-- 当前仅支持valine/waline自带的统计功能 -->
+                            
+                        
+                        
+                            <!-- 当前仅支持waline自带的统计功能 -->
+                            
+                        
+                    </ul>
+                </header>
+                <hr />
+                <div class="kratos-post-content">
+                    <table>
+<thead>
+<tr>
+<th>Regex</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>.</code></td>
+<td>任一字元（不包括換行、多位元組字元）</td>
+</tr>
+<tr>
+<td><code>\d</code></td>
+<td>比對任一數字字元，即 [0-9]</td>
+</tr>
+<tr>
+<td><code>\D</code></td>
+<td>比對任一非數字字元，即 [^0-9]</td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>比對任一空白字元，即 [\t\n\x0B\f\r]</td>
+</tr>
+<tr>
+<td><code>\S</code></td>
+<td>比對任一非空白字元，即 [^\s]</td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>比對任一 ASCII 字元，即 [a-zA-Z0-9_]</td>
+</tr>
+<tr>
+<td><code>\W</code></td>
+<td>比對任一非 ASCII 字元，即 [^\w]</td>
+</tr>
+</tbody></table>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Regex</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>X?</code></td>
+<td>X 項目出現一次或沒有</td>
+</tr>
+<tr>
+<td><code>X*</code></td>
+<td>X 項目出現零次或多次</td>
+</tr>
+<tr>
+<td><code>X+</code></td>
+<td>X 項目出現一次或多次</td>
+</tr>
+<tr>
+<td><code>X&#123;n&#125;</code></td>
+<td>X 項目出現 n 次</td>
+</tr>
+<tr>
+<td><code>X&#123;n,&#125;</code></td>
+<td>X 項目至少出現 n 次</td>
+</tr>
+<tr>
+<td><code>X&#123;n,m&#125;</code></td>
+<td>X 項目出現 n 次但不超過 m 次</td>
+</tr>
+</tbody></table>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Regex</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>^</code></td>
+<td>一行開頭</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>一行結尾</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>單字邊界</td>
+</tr>
+<tr>
+<td><code>\B</code></td>
+<td>非單字邊界</td>
+</tr>
+<tr>
+<td><code>\A</code></td>
+<td>輸入開頭</td>
+</tr>
+<tr>
+<td><code>\G</code></td>
+<td>前一個符合項目結尾</td>
+</tr>
+<tr>
+<td><code>\Z</code></td>
+<td>非最後終端機（final terminator）的輸入結尾</td>
+</tr>
+<tr>
+<td><code>\z</code></td>
+<td>輸入結尾</td>
+</tr>
+</tbody></table>
+
+                </div>
+                <footer class="kratos-entry-footer clearfix">
+                    <div class="post-like-donate text-center clearfix">
+                        <a class="read-more" href="/2021/05/22/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%88Regular%20Expression,%20Regex%EF%BC%89-%20%E7%B8%BD%E8%A1%A8/#more" title="正規表示法（Regular Expression, Regex）- 總表">繼續閱讀 <i class="fa fa-chevron-circle-right"></i></a>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    
+
+    
+    
+        <article>
+            <div class="kratos-hentry kratos-post-inner clearfix index-post">
+                <div class="kratos-entry-thumb-new">
+                    <a href="/2021/05/22/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%88Regular%20Expression,%20Regex%EF%BC%89-%20%E9%87%8F%E8%A9%9E%E3%80%81%E9%8C%A8%E9%BB%9E/">
+                        
+                    </a>
+                </div>
+                <header class="kratos-entry-header">
+                    <h1 class="text-center"><a class="kratos-entry-title" href="/2021/05/22/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%88Regular%20Expression,%20Regex%EF%BC%89-%20%E9%87%8F%E8%A9%9E%E3%80%81%E9%8C%A8%E9%BB%9E/">正規表示法（Regular Expression, Regex）- 量詞、錨點</a></h1>
+                    
+                    <ul class="kratos-post-meta text-center">
+                        <li>
+                            <i class="fa fa-calendar"></i>
+                            2021-05-22
+                        </li>
+                        
+                        
+                            <li>
+                                <i class="fa fa-tags"></i>
+                                <a class="tag-none-link" href="/tags/Regex/" rel="tag">Regex</a>
+                            </li>
+                        
+                        
+                            <!-- 当前仅支持valine/waline自带的统计功能 -->
+                            
+                        
+                        
+                            <!-- 当前仅支持waline自带的统计功能 -->
+                            
+                        
+                    </ul>
+                </header>
+                <hr />
+                <div class="kratos-post-content">
+                    <p>如果想使用者輸入的手機號碼格式是否為 XXXX-XXXXXXX，其中 X 為數字，雖然規則表示式可以使用 \d\d\d\d-\d\d\d\d\d\d，不過更簡單的寫法是 \d{4}-\d{6}，{n} 是貪婪量詞（Greedy quantifier）表示法的一種，表示前面的項目出現 n 次。</p>
+<p>底下列出可用的貪婪量詞：</p>
+<table>
+<thead>
+<tr>
+<th>Regex</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>X?</code></td>
+<td>X 項目出現一次或沒有</td>
+</tr>
+<tr>
+<td><code>X*</code></td>
+<td>X 項目出現零次或多次</td>
+</tr>
+<tr>
+<td><code>X+</code></td>
+<td>X 項目出現一次或多次</td>
+</tr>
+<tr>
+<td><code>X&#123;n&#125;</code></td>
+<td>X 項目出現 n 次</td>
+</tr>
+<tr>
+<td><code>X&#123;n,&#125;</code></td>
+<td>X 項目至少出現 n 次</td>
+</tr>
+<tr>
+<td><code>X&#123;n,m&#125;</code></td>
+<td>X 項目出現 n 次但不超過 m 次</td>
+</tr>
+</tbody></table>
+<hr>
+<p>貪婪量詞之所以貪婪，是因為看到貪婪量詞時，比對器（Matcher）會把符合量詞的文字全部吃掉，再逐步吐出（back-off）文字，看看是否符合貪婪量詞後的規則表示式，如果吐出的部份也符合就比對成功。</p>
+<p>簡單來說，貪婪量詞會儘可能地找出長度最長的符合文字。</p>
+<p>例如文字 <strong>xfooxxxxxxfoo</strong>，若使用規則表示式 <font color="FF0000" size="4"><b>.*foo</b></font> 比對，比較器根據  <font color="FF0000" size="4"><b>.*</b></font> 吃掉了整個 xfooxxxxxxfoo，之後吐出 foo 符合 foo 部份，得到的符合字串就是整個 <strong>xfooxxxxxxfoo</strong>。</p>
+<hr>
+<p>若在貪婪量詞表示法後加上<font color="FF0000" size="4"><b>?</b></font>，會成為逐步量詞（Reluctant quantifier），又常稱為懶惰量詞，或非貪婪（non-greedy）量詞（相對於貪婪量詞來說），比對器是一邊吃一邊比對文字是否符合量詞與之後的規則表示式。</p>
+<p>簡單來說，逐步量詞會儘可能地找出長度最短的符合文字。</p>
+<p>例如文字 xfooxxxxxxfoo 若用規則表示式 <font color="FF0000" size="4"><b>.*?foo</b></font> 比對，比對器在吃掉 xfoo 後發現符合 .*? 與 foo，接著繼續吃掉 xxxxxxfoo 發現符合 .*? 與 foo，得到 xfoo 與 xxxxxxfoo 兩個符合文字。</p>
+<hr>
+<p>有些工具或語言支援獨吐量詞（Possessive quantifier），例如 Java（然而 Python、JavaScript 不支援），也就是在貪婪量詞表示法後加上 +，比對器會將符合量詞的文字全部吃掉，而且不再回吐（因此才稱為獨吐）。</p>
+<p>例如文字 xfooxxxxxxfoo，若使用規則表示式 x*+foo 比對，x 符合 x*+ 被吃了，後續 foo 符合 foo，得到 xfoo 符合，接著 xxxxxx 符合 x*+ 被吃了，後續 foo 符合 foo，得到 xxxxxxfoo 符合。</p>
+<p>文字 xfooxxxxxxfoo，若使用規則表示式 .*+foo 比對，整個 xfooxxxxxxfoo 會因符合 .*+ 全被比對器吃了，沒有文字可再用於比對 foo，結果就是沒有任何文字符合。</p>
+<p>如果有個文字 Justin dog Monica doggie Irene，使用表示式 dog 的話，會符合到 dog 與 doggie 前的 dog 部份：</p>
+<p>量詞、錨點<br>你可以使用 <code>\b</code> 標出單字邊界，例如 <code>\bdog\b</code>，這就只會比對出 dog 單字：</p>
+<p>量詞、錨點<br>邊界比對用來表示文字必須符合指定的邊界條件，也就是定位點，因此這類表示式也常稱為錨點（Anchor），底下列出規則表示式中可用的邊界比對：</p>
+<table>
+<thead>
+<tr>
+<th>Regex</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>^</code></td>
+<td>一行開頭</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>一行結尾</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>單字邊界</td>
+</tr>
+<tr>
+<td><code>\B</code></td>
+<td>非單字邊界</td>
+</tr>
+<tr>
+<td><code>\A</code></td>
+<td>輸入開頭</td>
+</tr>
+<tr>
+<td><code>\G</code></td>
+<td>前一個符合項目結尾</td>
+</tr>
+<tr>
+<td><code>\Z</code></td>
+<td>非最後終端機（final terminator）的輸入結尾</td>
+</tr>
+<tr>
+<td><code>\z</code></td>
+<td>輸入結尾</td>
+</tr>
+</tbody></table>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://openhome.cc/Gossip/Regex/QuantifierAnchor.html">Openhome - 量詞、錨點</a></li>
+</ol>
+
+                </div>
+                <footer class="kratos-entry-footer clearfix">
+                    <div class="post-like-donate text-center clearfix">
+                        <a class="read-more" href="/2021/05/22/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E6%B3%95%EF%BC%88Regular%20Expression,%20Regex%EF%BC%89-%20%E9%87%8F%E8%A9%9E%E3%80%81%E9%8C%A8%E9%BB%9E/#more" title="正規表示法（Regular Expression, Regex）- 量詞、錨點">繼續閱讀 <i class="fa fa-chevron-circle-right"></i></a>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    
+
+
+
+
+
+    <div class="hidden">
+        <!-- 加载文章阅读对应的统计功能，评论自带的那种 -->
+        
+    </div>
+
+
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+        <div class="sticky-area">
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"></p>
+    </div>
+</aside>
+            
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分類目錄</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/123/">123</a><span class="category-list-count">1</span></li></ul></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>標籤</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Coding-Tips/" style="font-size: 0.7em;">Coding Tips</a> <a href="/tags/OOP/" style="font-size: 0.6em;">OOP</a> <a href="/tags/Operating-System/" style="font-size: 0.6em;">Operating System</a> <a href="/tags/PHP/" style="font-size: 0.6em;">PHP</a> <a href="/tags/Regex/" style="font-size: 0.7em;">Regex</a> <a href="/tags/System-Design/" style="font-size: 0.6em;">System Design</a> <a href="/tags/coding-Tips/" style="font-size: 0.6em;">coding Tips</a> <a href="/tags/front-end/" style="font-size: 0.65em;">front-end</a> <a href="/tags/%E5%8F%AF%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%B8%8D%E8%A6%81%E5%AF%AB%E7%B3%99-code/" style="font-size: 0.65em;">可不可以不要寫糙 code</a> <a href="/tags/%E5%BD%93%E7%84%B6%E6%88%91%E5%9C%A8%E6%89%AF%E6%B7%A1/" style="font-size: 0.75em;">当然我在扯淡</a> <a href="/tags/%E5%BF%85%E5%8B%9D-IT-%E5%8D%81%E5%85%AB%E6%8B%9B/" style="font-size: 0.6em;">必勝 IT 十八招</a> <a href="/tags/%E8%AC%9B%E5%BA%A7%E5%8F%83%E8%88%87%E5%BF%83%E5%BE%97/" style="font-size: 0.6em;">講座參與心得</a> <a href="/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/" style="font-size: 0.8em;">閱讀心得</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2021/09/03/hello-world/"><i class="fa  fa-book"></i> Hello World</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/05/22/%E4%BB%80%E9%BA%BC%E6%98%AF%E5%B0%8D%E4%BD%BF%E7%94%A8%E8%80%85%E5%8F%8B%E5%A5%BD/"><i class="fa  fa-book"></i> 什麼是對使用者友好</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/05/22/%E5%8F%AF%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%B8%8D%E8%A6%81%E5%AF%AB%E7%B3%99%20code%20%E7%B3%BB%E5%88%97%20%E7%AC%AC%208%20%E7%AF%87%20-%20%E4%B8%8D%E5%BF%85%E8%A6%81%E7%9A%84%E8%A8%BB%E8%A7%A3/"><i class="fa  fa-book"></i> 可不可以不要寫糙 code 系列 第 8 篇 - 不必要的註解</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/05/22/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%20-%20Introducation/"><i class="fa  fa-book"></i> 作業系統 - Introducation</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/05/22/%E5%8F%AF%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%B8%8D%E8%A6%81%E5%AF%AB%E7%B3%99%20code%E7%B3%BB%E5%88%97%20-%20%E5%A6%82%E4%BD%95%E5%AF%AB%E9%AB%98%E5%93%81%E8%B3%AA%20function/"><i class="fa  fa-book"></i> 可不可以不要寫糙 code系列 - 如何寫高品質 function </a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  >
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        <li><a href="mailto:nagicheng@gmail.com"><i class="fa fa-envelope"></i></a></li>
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://www.facebook.com/https://www.facebook.com/profile.php?id=100004983279906"><i class="fa fa-facebook-official"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://cn.linkedin.com/in/https://www.linkedin.com/in/nagikon/"><i class="fa fa-linkedin-square"></i></a></li>
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/https://github.com/NagiKon"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2021 Treeboのブログ 版權所有.</li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by Treebo.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>

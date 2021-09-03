@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="/images/site_logo.webp">
+  <title>重構 | Treeboのブログ</title>
+  <meta name="author" content="Treebo" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="Coding Tips" />
+  
+  <meta name="description" content="原則 避免冗長的 God Object、參數列表、函式長度、看不懂的變數名稱 如果參數或是專屬某個 data 的相關 function 太多太長，就把它獨立成一個 class。 if &#x2F; switch 如果沒有過於複雜或太多的操作與頻繁的需求變動，沒有必要把它特地多型化。 減少重複程式碼的數量，為了可讀性，可接受部分重複  參考 如果 method 數量過多，而且無法分離時，可將整包的 metho">
+<meta property="og:type" content="article">
+<meta property="og:title" content="重構">
+<meta property="og:url" content="http://example.com/2021/05/22/%E9%87%8D%E6%A7%8B/index.html">
+<meta property="og:site_name" content="Treeboのブログ">
+<meta property="og:description" content="原則 避免冗長的 God Object、參數列表、函式長度、看不懂的變數名稱 如果參數或是專屬某個 data 的相關 function 太多太長，就把它獨立成一個 class。 if &#x2F; switch 如果沒有過於複雜或太多的操作與頻繁的需求變動，沒有必要把它特地多型化。 減少重複程式碼的數量，為了可讀性，可接受部分重複  參考 如果 method 數量過多，而且無法分離時，可將整包的 metho">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://example.com/images/site_logo.webp">
+<meta property="article:published_time" content="2021-05-22T12:32:33.000Z">
+<meta property="article:modified_time" content="2021-06-07T03:53:39.688Z">
+<meta property="article:author" content="Treebo">
+<meta property="article:tag" content="Coding Tips">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/site_logo.webp">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['G-34GCMGPCS5']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics -->
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+  
+  <style>
+    
+      .kratos-cover.kratos-cover-2 {
+        background-image: url('/images/banner.webp');
+      }
+    
+    
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('/images/bg.webp');
+        }
+      }
+    
+  </style>
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首頁</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>歸檔</a></li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">Treeboのブログ</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>Treeboのブログ</h2> <br />
+                        <span>學習與反思；交流與批判</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            <article>
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center">重構</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><i class="fa fa-calendar"></i> 2021-05-22</li>
+                <li><i class="fa fa-user"></i> 作者 Treebo</li>
+                <li>
+                    <i class="fa fa-edit"></i> 
+                    
+                    
+                        578
+                    
+                    字
+                </li>
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <hr />
+            <h2 id="原則"><a href="#原則" class="headerlink" title="原則"></a>原則</h2><ol>
+<li>避免冗長的 <code>God Object</code>、<code>參數列表</code>、<code>函式長度</code>、<code>看不懂的變數名稱</code></li>
+<li>如果參數或是專屬某個 <code>data</code> 的相關 <code>function</code> 太多太長，就把它獨立成一個 <code>class</code>。</li>
+<li><code>if / switch</code> 如果沒有過於複雜或太多的操作與頻繁的需求變動，沒有必要把它特地多型化。</li>
+<li>減少重複程式碼的數量，為了可讀性，可接受部分重複</li>
+</ol>
+<h2 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h2><ol>
+<li><p>如果 <code>method</code> 數量過多，而且無法分離時，可將整包的 <code>method</code> 轉換成 <code>class</code>。但要考慮耦合與複雜度問題。<br> <a target="_blank" rel="noopener" href="https://refactoring.guru/replace-method-with-method-object">Replace Method with Method Object</a></p>
+</li>
+<li><p>當 <code>parameter</code> 過多時，可以把參數與相關操作方法包裝成 <code>class</code>。</p>
+</li>
+<li><p>如果舊的演算法，有更好讀的寫法，可進行更換。例如：傳統 <code>for-loop</code> 變成使用函數式語言 <code>each</code> 的方式在尋訪。<br> <a target="_blank" rel="noopener" href="https://refactoring.guru/substitute-algorithm">Substitute Algorithm</a></p>
+</li>
+<li><p>當使用的 <code>library</code> 無法滿足需求時，可自己再包一個 <code>function</code>，如果變動較大的話可包裝成 <code>class</code>。<br> <a target="_blank" rel="noopener" href="https://refactoring.guru/introduce-foreign-method">Introduce Foreign Method</a></p>
+</li>
+<li><p>將陣列包裝成物件。<br> <a target="_blank" rel="noopener" href="https://refactoring.guru/replace-array-with-object">Replace Array with Object</a></p>
+<ul>
+<li><code>jdfiosdjfiodsjfi</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://refactoring.guru/refactoring">Refactoring Guru</a></li>
+<li><a target="_blank" rel="noopener" href="https://sourcemaking.com/refactoring">Source Making</a></li>
+<li><a target="_blank" rel="noopener" href="https://refactoring.com/catalog/">Refactoring</a></li>
+</ol>
+
+        </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        function share(dest) {
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "http://example.com/2021/05/22/%E9%87%8D%E6%A7%8B/";
+            const title         = "「重構」";
+            const excerpt       = `原則
+避免冗長的 God Object、參數列表、函式長度、看不懂的變數名稱
+如果參數或是專屬某個 data 的相關 function 太多太長，就把它獨立成一個 class。
+if / switch 如果沒有過於複雜或太多的操作與頻...`;
+            let _URL;
+            switch (dest) {
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/Coding-Tips/" rel="tag">Coding Tips</a>
+                </div>
+                <div class="pull-date">
+                <span>最後編輯：2021-06-07</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" 關於 private 的 visibility - 以 PHP 為範例" href="/2021/05/22/PHP/基礎語法/關於 private 的 visibility - 以 PHP 為範例/">&lt; 上一篇</a>
+            </div>
+            
+            
+            <div class="nav-next clearfix">
+                <a title=" 談 Linux，Windows 和 Mac" href="/2021/05/22/談 Linux，Windows 和 Mac/">下一篇 &gt;</a>
+            </div>
+            
+        </nav>
+    
+    
+        <div id="disqus_thread" class="post-comments lazy-load"></div>
+
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2021/05/22/%E9%87%8D%E6%A7%8B/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = '2021/05/22/重構/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.language = 'zh_TW';
+    };
+    var load_comm = () => {
+        if (typeof DISQUS == 'undefined') {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://treebo.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        } else {
+            DISQUS.reset({
+                reload: true,
+                config: function () {  
+                    this.page.url = 'http://example.com/2021/05/22/%E9%87%8D%E6%A7%8B/';  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = '2021/05/22/重構/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                }
+            });
+        }
+    };
+    
+</script>
+<script async id="dsq-count-scr" src="//treebo.disqus.com/count.js"></script>
+
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+</article>
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"></p>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分類目錄</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/123/">123</a><span class="category-list-count">1</span></li></ul></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>標籤</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Coding-Tips/" style="font-size: 0.7em;">Coding Tips</a> <a href="/tags/OOP/" style="font-size: 0.6em;">OOP</a> <a href="/tags/Operating-System/" style="font-size: 0.6em;">Operating System</a> <a href="/tags/PHP/" style="font-size: 0.6em;">PHP</a> <a href="/tags/Regex/" style="font-size: 0.7em;">Regex</a> <a href="/tags/System-Design/" style="font-size: 0.6em;">System Design</a> <a href="/tags/coding-Tips/" style="font-size: 0.6em;">coding Tips</a> <a href="/tags/front-end/" style="font-size: 0.65em;">front-end</a> <a href="/tags/%E5%8F%AF%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%B8%8D%E8%A6%81%E5%AF%AB%E7%B3%99-code/" style="font-size: 0.65em;">可不可以不要寫糙 code</a> <a href="/tags/%E5%BD%93%E7%84%B6%E6%88%91%E5%9C%A8%E6%89%AF%E6%B7%A1/" style="font-size: 0.75em;">当然我在扯淡</a> <a href="/tags/%E5%BF%85%E5%8B%9D-IT-%E5%8D%81%E5%85%AB%E6%8B%9B/" style="font-size: 0.6em;">必勝 IT 十八招</a> <a href="/tags/%E8%AC%9B%E5%BA%A7%E5%8F%83%E8%88%87%E5%BF%83%E5%BE%97/" style="font-size: 0.6em;">講座參與心得</a> <a href="/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/" style="font-size: 0.8em;">閱讀心得</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2021/09/03/hello-world/"><i class="fa  fa-book"></i> Hello World</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/05/22/%E4%BB%80%E9%BA%BC%E6%98%AF%E5%B0%8D%E4%BD%BF%E7%94%A8%E8%80%85%E5%8F%8B%E5%A5%BD/"><i class="fa  fa-book"></i> 什麼是對使用者友好</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/05/22/%E5%8F%AF%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%B8%8D%E8%A6%81%E5%AF%AB%E7%B3%99%20code%20%E7%B3%BB%E5%88%97%20%E7%AC%AC%208%20%E7%AF%87%20-%20%E4%B8%8D%E5%BF%85%E8%A6%81%E7%9A%84%E8%A8%BB%E8%A7%A3/"><i class="fa  fa-book"></i> 可不可以不要寫糙 code 系列 第 8 篇 - 不必要的註解</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/05/22/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%20-%20Introducation/"><i class="fa  fa-book"></i> 作業系統 - Introducation</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/05/22/%E5%8F%AF%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%B8%8D%E8%A6%81%E5%AF%AB%E7%B3%99%20code%E7%B3%BB%E5%88%97%20-%20%E5%A6%82%E4%BD%95%E5%AF%AB%E9%AB%98%E5%93%81%E8%B3%AA%20function/"><i class="fa  fa-book"></i> 可不可以不要寫糙 code系列 - 如何寫高品質 function </a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  >
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        <li><a href="mailto:nagicheng@gmail.com"><i class="fa fa-envelope"></i></a></li>
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://www.facebook.com/https://www.facebook.com/profile.php?id=100004983279906"><i class="fa fa-facebook-official"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://cn.linkedin.com/in/https://www.linkedin.com/in/nagikon/"><i class="fa fa-linkedin-square"></i></a></li>
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/https://github.com/NagiKon"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2021 Treeboのブログ 版權所有.</li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by Treebo.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>
